@@ -377,7 +377,7 @@ PassManager.prototype = {
 
 	addLogin: function addLogin(login) {
 		let paths = this._getLoginPaths(login.hostname);
-		let re = /\/passmanager([0-9]+)$/;
+		let re = new RegExp(login.username + "([0-9]+)$", "g");
 		let max = 0;
 		for each (let path in paths) {
 			let matches = re.exec(path);
@@ -385,8 +385,12 @@ PassManager.prototype = {
 				max = Number(matches[1]);
 			}
 		}
+		let tail = "";
+		if (max > 0) {
+			tail = "_" + (max+1);
+		}
 		let path = this._getHostnamePath(login.hostname);
-		this._saveLogin(path + "/passmanager" + (max + 1), login);
+		this._saveLogin(path + "/" + login.username + tail, login);
 	},
 
 	removeLogin: function removeLogin(login) {
