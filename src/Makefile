@@ -1,4 +1,4 @@
-TARGET = ../passmanager@gekmihesg.de.xpi
+TARGET = ../passmanager@github.com.xpi
 all: xpi
 xpi:
 	rm -f $(TARGET)
