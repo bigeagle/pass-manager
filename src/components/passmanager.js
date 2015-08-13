@@ -60,8 +60,17 @@ const LoginInfo = new Components.Constructor(
 
 function PassManager() {}
 PassManager.prototype = {
-	classID: Components.ID("{1dadf2b7-f243-41b4-a2f2-e53207f29167}"),
+	classDescription: "Password Storage using zx2c4's pass",
+	contractID: "@github.com/bigeagle/pass-manager;1",
+	classID: Components.ID("{04056be0-e02b-42e2-aef7-ddf3e798297f}"),
 	QueryInterface: XPCOMUtils.generateQI([Ci.nsILoginManagerStorage]),
+
+	_xpcom_categories: [
+		{
+			category: "login-manager-storage",
+			entry: "nsILoginManagerStorage"
+		}
+	],
 
 	_environment: null,
 	_propMap: null,

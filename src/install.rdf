@@ -5,9 +5,9 @@
 
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>passmanager@github.com</em:id>
-		<em:name>pass-manager</em:name>
+		<em:name>pass-storage</em:name>
 		<em:description>Replace integrated password manager by zx2c4's pass (forked from Markus Weippert)</em:description>
-		<em:version>0.5.0</em:version>
+		<em:version>0.5.1</em:version>
 		<em:creator>Justin Wong</em:creator>
 		<em:type>2</em:type>
 		<!-- Mozilla Firefox -->
